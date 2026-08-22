@@ -10,23 +10,29 @@
     <div style="text-align: center; padding-top: 120px;">
         <h2>Accedi</h2>
 
-        <div style="margin-top: 30px;">
-            <input id="username" type="text" placeholder="Nome"
-                   style="padding: 10px; width: 250px; border-radius: 6px; border: 1px solid #333;">
+   <div style="margin-top: 30px; text-align: center;">
+    <input id="lacasereccia" type="text" placeholder="pasta"
+           style="padding: 10px; width: 250px; border-radius: 6px; border: 1px solid #333;">
+</div>
+
         </div>
 
-        <div style="margin-top: 15px;">
-            <input id="password" type="password" placeholder="Password"
-                   style="padding: 10px; width: 250px; border-radius: 6px; border: 1px solid #333;">
-        </div>
+<div style="margin-top: 15px; text-align: center;">
+    <input id="lacasereccia" type="password" placeholder="pasta"
+           style="padding: 10px; width: 250px; border-radius: 6px; border: 1px solid #333;">
+</div>
 
-        <div style="margin-top: 25px;">
-            <button onclick="login()"
-                    style="background: #333; color: white; padding: 12px 30px;
-                           border: none; border-radius: 8px; font-size: 18px;">
-                Accedi
-            </button>
         </div>
+<div style="margin-top: 25px; text-align: center;">
+    <button onclick="login()"
+            style="background: #333; color: white; padding: 12px 30px;
+                   border: none; border-radius: 8px; font-size: 18px;">
+        Entra
+    </button>
+</div>
+
+<p id="error" style="color: red; text-align: center; margin-top: 20px;"></p>
+
 
         <p id="error" style="color: red; margin-top: 20px;"></p>
     </div>
@@ -50,3 +56,19 @@
 
 </body>
 </html>
+<script>
+    function login() {
+        const user = document.getElementById("lacasereccia").value;
+        const pass = document.getElementById("pasta").value;
+
+        const validUser = "Elisabetta";
+        const validPass = "1234";
+
+        if (user === validUser && pass === validPass) {
+            window.location.href = "home.html";
+        } else {
+            document.getElementById("error").innerText = "Nome o password errati.";
+        }
+    }
+</script>
+
